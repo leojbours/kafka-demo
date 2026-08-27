@@ -21,7 +21,7 @@ public class StrConsumerListener {
     log.info("Logged message: {}", message);
   }
 
-  @StrConsumerCustomListener(groupId = "group-2")
+  @KafkaListener(topics = {"str-topic"}, containerFactory = "strContainerFactoryWithInterceptor", groupId = "group-2")
   public void process(String message) {
     log.info("Processed message: {}", message);
   }

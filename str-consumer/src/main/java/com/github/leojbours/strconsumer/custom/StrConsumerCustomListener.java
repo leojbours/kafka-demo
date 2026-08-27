@@ -16,7 +16,7 @@ public @interface StrConsumerCustomListener {
   String[] topics() default "str-topic";
 
   @AliasFor(annotation = KafkaListener.class, attribute = "containerFactory")
-  String[] containerFactory() default "strContainerFactory";
+  String containerFactory() default "strContainerFactory";
 
   @AliasFor(annotation = KafkaListener.class, attribute = "groupId")
   String groupId() default "";

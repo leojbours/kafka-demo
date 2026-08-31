@@ -18,7 +18,8 @@ public class StrConsumerListener {
 
   @StrConsumerCustomListener(groupId = "group-1")
   public void log(String message) {
-    log.info("Logged message: {}", message);
+    throw new RuntimeException("Test exception");
+//    log.info("Logged message: {}", message);
   }
 
   @KafkaListener(topics = {"str-topic"}, containerFactory = "strContainerFactoryWithInterceptor", groupId = "group-2")

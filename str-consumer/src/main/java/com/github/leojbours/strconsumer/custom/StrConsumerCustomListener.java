@@ -18,6 +18,9 @@ public @interface StrConsumerCustomListener {
   @AliasFor(annotation = KafkaListener.class, attribute = "containerFactory")
   String containerFactory() default "strContainerFactory";
 
+  @AliasFor(annotation = KafkaListener.class, attribute = "errorHandler")
+  String errorHandler() default "kafkaExceptionHandler";
+
   @AliasFor(annotation = KafkaListener.class, attribute = "groupId")
   String groupId() default "";
 }
